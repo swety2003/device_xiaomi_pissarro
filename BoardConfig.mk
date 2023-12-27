@@ -8,6 +8,8 @@ DEVICE_PATH := device/xiaomi/pissarro
 
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+BUILD_BROKEN_PREBUILT_ELF_FILES := true
+BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true 
 
 # A/B
 AB_OTA_UPDATER := true
@@ -44,7 +46,7 @@ TARGET_SCREEN_DENSITY := 440
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(DEVICE_PATH)/framework_compatibility_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    vendor/evolution/config/device_framework_matrix.xml
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 
@@ -176,3 +178,5 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit the proprietary files
 include vendor/xiaomi/pissarro/BoardConfigVendor.mk
+include vendor/evolution/config/BoardConfigKernel.mk
+include vendor/evolution/config/BoardConfigSoong.mk
